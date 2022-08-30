@@ -5,3 +5,40 @@
 <h3>Relatório de Transações por Período</h3>
 <hr>
 
+<!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+
+        google.charts.load('current', {'packages':['corechart']});
+
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+
+            var data = google.visualization.arrayToDataTable([
+                ['Tipo', 'Valor', { role: 'annotation' }],
+                ['Receitas', 32000, '32000'],
+                ['Despesas', 1210, '1210'],
+            ]);
+
+
+            var options = { title:'Receitas vs Despesas por Período',
+                            width:900,
+                            height:900,
+                            legend: {
+                                position: 'bottom',
+                                textStyle: {
+                                    fontSize: 25, 
+                                    bold: true,
+                                },
+                            },
+                            sliceVisibilityThreshold: 0,
+                            pieSliceText: 'value',
+                            colors: ['#0052cc', 'orange']
+                          };
+
+            var chart = new google.visualization.PieChart(document.getElementById('grafico'));
+            chart.draw(data, options);
+        }
+    </script>  
+    <div id="grafico"></div>
