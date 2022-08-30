@@ -49,15 +49,15 @@ namespace myfinance_web_netcore.Domain
 
             var sql = $"select id, data, valor, tipo, historico, id_plano_conta from transacao WHERE ID = {id}";
             var dataTable = objDAL.RetornarDataTable(sql);
-            
+            Console.WriteLine(dataTable);
             var transacao = new TransacaoModel()
             {
-                Id = int.Parse(dataTable.Rows[0]["ID"].ToString()),
-                Historico = dataTable.Rows[0]["HISTORICO"].ToString(),
-                Tipo = dataTable.Rows[0]["TIPO"].ToString(),
+                Id = int.Parse(dataTable.Rows[0]["id"].ToString()),
+                Historico = dataTable.Rows[0]["historico"].ToString(),
+                Tipo = dataTable.Rows[0]["tipo"].ToString(),
                 Data = DateTime.Parse(dataTable.Rows[0]["data"].ToString()),
-                Valor = decimal.Parse(dataTable.Rows[0]["VALOR"].ToString()),
-                IdPlanoConta = int.Parse(dataTable.Rows[0]["ID"].ToString()),
+                Valor = decimal.Parse(dataTable.Rows[0]["valor"].ToString()),
+                IdPlanoConta = int.Parse(dataTable.Rows[0]["id_plano_conta"].ToString()),
             };
              objDAL.Desconectar();
             return transacao;
