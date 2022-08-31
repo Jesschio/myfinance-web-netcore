@@ -1,0 +1,113 @@
+@model TransacaoReportModel
+@{
+    ViewData["Title"] = "Relatório de Transações por Período";
+
+    string vStartDate = string.Empty;
+    string vEndDate = string.Empty;
+
+    if (Model.StartDate != null)
+    {
+        vStartDate = DateTime.Parse(Model.StartDate.ToString()).ToString("yyyy-MM-dd");   
+    }
+
+    if (Model.EndDate != null)
+    {
+        vEndDate = DateTime.Parse(Model.EndDate.ToString()).ToString("yyyy-MM-dd");
+    }
+
+    decimal despesas = new decimal();
+    decimal receita = new decimal();
+
+    if (Model.EndDate != null)
+    {
+        foreach (TransacaoModelMin Transacao in Model.Transacao)
+        {
+            if (@Transacao.Tipo.ToString() == "D")
+            {
+                despesas = @Transacao.Valor;
+            }
+            if (@Transacao.Tipo.ToString() == "R")
+            {
+                receita = @Transacao.Valor;
+            }
+        }
+    }
+}
+
+<h3>@ViewData["Title"]</h3>
+
+<hr>
+
+<form asp-controller="Transacao" asp-action="TransacaoReport">
+    <div class="form-group">
+        <label>Data inicial:</label>
+        <input type="date" class="form-control" asp-for="StartDate" value="@vStartDate">
+        <span asp-validation-for="StartDate" class="text-danger"></span>
+        <label>Data final:</label>
+        <input type="date" class="form-control" asp-for="EndDate" value="@vEndDate">
+        <span asp-validation-for="StartDate" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-block btn-success">Filtrar</button>
+</form>
+
+<hr>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script>
+        let receita = @receita.ToString().Replace(",",".");
+        let despesas = @despesas.ToString().Replace(",",".");
+        
+        google.charts.load('current', {'packages':['corechart']});
+
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+
+            var data = google.visualization.arrayToDataTable([
+                ['Tipo', 'Valor', { role: 'annotation' }],
+                ['Receitas', receita, receita.toString()],
+                ['Despesas',  despesas, despesas.toString()],
+            ]);
+
+
+            var options = { title:'Receitas vs Despesas por Período',
+                            width:300,
+                            height:300,
+                            legend: {
+                                position: 'bottom',
+                                textStyle: {
+                                    fontSize: 10, 
+                                    bold: true,
+                                },
+                            },
+                            sliceVisibilityThreshold: 0,
+                            pieSliceText: 'value',
+                            colors: ['#0052cc', 'orange']
+                          };
+
+            var chart = new google.visualization.PieChart(document.getElementById('grafico'));
+            chart.draw(data, options);
+        }
+    </script>  
+    <div id="grafico"></div>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Tipo</th>
+        <th>Valor</th>
+    </tr>
+
+    @{
+        foreach (TransacaoModelMin Transacao in Model.Transacao)
+        {
+             <tr>
+                <td>@Transacao.Tipo</td>
+                <td>@Transacao.Valor</td>
+            </tr>
+        }
+    }
+   
+</table>
+
+

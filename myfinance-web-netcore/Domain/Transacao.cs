@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Text;
+using System.Data;
 using myfinance_web_netcore.infra;
 using myfinance_web_netcore.Models;
 
@@ -42,11 +44,12 @@ namespace myfinance_web_netcore.Domain
             objDAL.ExecutarComandoSQL(sql);
             objDAL.Desconectar();
         }
-		public void Excluir(int id)
+
+        public void Excluir(int id)
         {
             var objDAL = DAL.GetInstancia;
             objDAL.Conectar();
-            var sql = $"DELETE FROM TRANSACAO WHERE ID = {id}";
+            var sql = $"DELETE FROM transacao WHERE ID = {id}";
             objDAL.ExecutarComandoSQL(sql);
             objDAL.Desconectar();
         }
@@ -97,6 +100,49 @@ namespace myfinance_web_netcore.Domain
              }
              objDAL.Desconectar();
             return lista;
+        }
+
+        public List<TransacaoModelMin> filterTransacao(DateTime? startDate, DateTime? endDate)
+        {
+            List<TransacaoModelMin> Transacao = new List<TransacaoModelMin>();
+            DAL dalInstance = DAL.GetInstancia;
+            dalInstance.Conectar();
+
+            StringBuilder sql = new StringBuilder("SELECT sum(valor) as valors, tipo");
+            sql.Append(" FROM Transacao ");
+
+            if (startDate != null)
+            {
+                sql.Append($" WHERE data >= '{startDate?.ToString("yyyy-MM-dd")}'");
+
+                if (endDate != null)
+                {
+                    sql.Append($" AND data <= '{endDate?.ToString("yyyy-MM-dd")}'");
+                }
+            
+            }
+            else
+            {
+                sql.Append($" WHERE data <= '{endDate?.ToString("yyyy-MM-dd")}'");
+            }
+            sql.Append(" GROUP BY tipo");
+
+            DataTable dataTable = dalInstance.RetornarDataTable(sql.ToString());
+
+            for (int i = 0; i < dataTable.Rows.Count; i++)
+            {
+                TransacaoModelMin TransacaoObj = new TransacaoModelMin()
+                {
+                    Valor = decimal.Parse(dataTable.Rows[i]["valors"].ToString()),
+                    Tipo = dataTable.Rows[i]["tipo"].ToString()
+                };
+
+                Transacao.Add(TransacaoObj);
+            }
+
+            dalInstance.Desconectar();
+
+            return Transacao;
         }
         
     }

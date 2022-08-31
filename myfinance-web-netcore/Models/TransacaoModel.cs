@@ -10,4 +10,11 @@ namespace myfinance_web_netcore.Models
         public int IdPlanoConta {get; set; }
         
     }
+
+    public class TransacaoModelMin
+    { 
+        public decimal Valor {get; set; }
+        public string? Tipo { get; set; }
+        
+    }
 }

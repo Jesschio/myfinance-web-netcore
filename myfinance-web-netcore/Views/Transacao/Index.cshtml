@@ -5,6 +5,7 @@
 <h3>Transações Financeiras</h3>
 <hr>
 
+<button type="button" class="btn btn-block btn-primary" onclick="AbrirTransacaoReport()">Relatório de transações</button>
 <button type = "button" class = "btn btn-block btn-primary" onclick="CriarTransacao()">Registrar Transação</button>
 
 <table class='table table-bordered'>
@@ -38,20 +39,25 @@
 </table>
 
 <script>
-  function CriarTransacao()
-  {
-      window.location.href = "../Transacao/CriarTransacao";
-  }
 
-  function EditarTransacao(id)
-  {
-      window.location.href = "../Transacao/CriarTransacao/" + id;
-  }
+        function CriarTransacao()
+        {
+            window.location.href = "../Transacao/CriarTransacao";
+        }
 
-  function ExcluirTransacao(id)
-  {
-      window.location.href = "../Transacao/ExcluirTransacao/" + id;
-  }
+        function EditarTransacao(id)
+        {
+            window.location.href = "../Transacao/CriarTransacao/" + id;
+        }
+
+        function ExcluirTransacao(id)
+        {
+            window.location.href = "../Transacao/ExcluirTransacao/" + id;
+        }
+
+        function AbrirTransacaoReport() {
+        window.location.href = '../Transacao/TransacaoReport';
+    }
 
          
 </script>

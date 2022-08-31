@@ -40,13 +40,6 @@ namespace myfinance_web_netcore.Controllers
             return View();
         }
 
-        [HttpGet]
-        public IActionResult ExcluirTransacao(int id)
-        {
-           new Transacao().Excluir(id);
-           return RedirectToAction("Index");
-        }
-
          [HttpPost]
           public IActionResult CriarTransacao(TransacaoModel formulario)
         {
@@ -58,6 +51,30 @@ namespace myfinance_web_netcore.Controllers
                 transacao.Atualizar(formulario);
                 
             return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public IActionResult ExcluirTransacao(int id)
+        {
+           new Transacao().Excluir(id);
+           return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public IActionResult TransacaoReport()
+        {
+            TransacaoReportModel model = new TransacaoReportModel();
+            return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult TransacaoReport(TransacaoReportModel model)
+        {
+            if (model.StartDate != null || model.EndDate != null) {
+                model.Transacao = new Transacao().filterTransacao(model.StartDate, model.EndDate);
+            }
+
+            return View(model);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
