@@ -16,8 +16,8 @@
   try{
      vId = int.Parse(@ViewBag.Registro.Id.ToString());
      vData = DateTime.Parse(@ViewBag.Registro.Data.ToString()).ToString("yyyy-MM-dd");
-     vPlanoContaId = int.Parse(@ViewBag.Registro.IdPlanoConta.ToString());
-     vDescricao = @ViewBag.Registro.historico.ToString();
+     vPlanoContaId = @ViewBag.Registro.IdPlanoConta;
+     vDescricao = @ViewBag.Registro.Historico.ToString();
      vTipo = @ViewBag.Registro.Tipo.ToString();
 
     CultureInfo invC = CultureInfo.InvariantCulture;
@@ -35,10 +35,10 @@
 <form asp-controller="Transacao" asp-action="CriarTransacao">
   <input type="hidden" asp-for="Id"/>
 
-  <div class="form-group">
-<label>Data:</label>
-<input type="date" class="form-control" asp-for="Data" value="@vData">
-<span asp-validation-for="Data" class="text-danger"> </span>
+<div class="form-group">
+  <label>Data:</label>
+  <input type="date" class="form-control" asp-for="Data" value="@vData">
+  <span asp-validation-for="Data" class="text-danger"> </span>
 </div>
 
 <div class="form-group">

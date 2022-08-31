@@ -1,14 +1,42 @@
-﻿@{
-    ViewData["Title"] = "RelatorioTransacao";
+﻿@using System.Globalization
+@model RelatorioTransacaoModel
+@{
+    ViewData["Title"] = "Relatório de Transações por Período";
+
+    var vData1 = string.Empty;
+    var vData2 = string.Empty;
+
+    try{
+        vData1 = @ViewBag.RelatorioTransacaoModel.Data1;
+        vData2 = @ViewBag.RelatorioTransacaoModel.Data2;
+    }
+    catch{}
+      var despesas = @ViewBag.despesas;
+       var receita = @ViewBag.receita;
 }
 
-<h3>Relatório de Transações por Período</h3>
-<hr>
+<h1>@ViewData["Title"]</h1>
+<form asp-controller=RelatorioTransacao asp-action="Filtrar">
+    <div class="form-group">
+        <label>De:</label>
+        <input type="date" class="form-control" asp-for="Data1" value="@vData1">
+        <span asp-validation-for="Data1" class="text-danger"> </span>
+    </div>
+    <div class="form-group">
+        <label>Até:</label>
+        <input type="date" class="form-control" asp-for="Data2" value="@vData2">
+        <span asp-validation-for="Data2" class="text-danger"> </span>
+    </div>
+
+  <button type="submit" class="btn btn-block btn-success">Filtrar</button>
+</form>
 
 <!--Load the AJAX API-->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-
+    <script>
+        let receita = @receita.ToString().Replace(",",".");
+        let despesas = @despesas.ToString().Replace(",",".");
+        
         google.charts.load('current', {'packages':['corechart']});
 
         google.charts.setOnLoadCallback(drawChart);
@@ -17,14 +45,14 @@
 
             var data = google.visualization.arrayToDataTable([
                 ['Tipo', 'Valor', { role: 'annotation' }],
-                ['Receitas', 32000, '32000'],
-                ['Despesas', 1210, '1210'],
+                ['Receitas', receita, receita.toString()],
+                ['Despesas',  despesas, despesas.toString()],
             ]);
 
 
             var options = { title:'Receitas vs Despesas por Período',
-                            width:900,
-                            height:900,
+                            width:300,
+                            height:300,
                             legend: {
                                 position: 'bottom',
                                 textStyle: {

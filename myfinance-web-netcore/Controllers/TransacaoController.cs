@@ -40,6 +40,13 @@ namespace myfinance_web_netcore.Controllers
             return View();
         }
 
+        [HttpGet]
+        public IActionResult ExcluirTransacao(int id)
+        {
+           new Transacao().Excluir(id);
+           return RedirectToAction("Index");
+        }
+
          [HttpPost]
           public IActionResult CriarTransacao(TransacaoModel formulario)
         {
