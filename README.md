@@ -7,7 +7,7 @@ A figura abaixo representa a modelagem lógica do banco de dados da aplicação 
 
 <img src = "docs\DER.png" alt = "diagram">
 
-##Requisitos
+## Requisitos
 
 Antes de iniciar, por favor verificar se possui/instalou os seguintes requisitos:
 - Versão mais recente do Visual Studio Code
