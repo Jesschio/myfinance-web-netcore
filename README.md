@@ -16,6 +16,22 @@ Antes de iniciar, por favor verificar se possui/instalou os seguintes requisitos
 - Última versão do Git, a qual pode ser adquirida por meio do link "https://git-scm.com/downloads"
 - Última versão do C# extensions, o qual deve ser instalado no Visual Studio Code
 
+## 🌈 Contribuidores<br>
+
+<table>
+  <tr>
+    <td align="center">
+      <a href="#">
+        <img src="https://avatars.githubusercontent.com/u/48913154?v=4" width="100px;" alt="Foto do Victor Marques Silva no GitHub"/><br>
+        <sub>
+          <b>Victor Marques Silva</b>
+        </sub>
+      </a>
+    </td>
+    </td>
+  </tr>
+</table>
+
 ## 📫 Contribuia
 
 - Realize um Fork desse repositório
