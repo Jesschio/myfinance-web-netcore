@@ -24,7 +24,7 @@ Antes de iniciar, por favor verificar se possui/instalou os seguintes requisitos
       <a href="#">
         <img src="https://avatars.githubusercontent.com/u/48913154?v=4" width="100px;" alt="Foto do Victor Marques Silva no GitHub"/><br>
         <sub>
-          <p>Victor Marques Silva</p>
+          <b>Victor Marques Silva</b>
         </sub>
       </a>
     </td>
