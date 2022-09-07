@@ -16,6 +16,43 @@ Antes de iniciar, por favor verificar se possui/instalou os seguintes requisitos
 - Última versão do Git, a qual pode ser adquirida por meio do link "https://git-scm.com/downloads"
 - Última versão do C# extensions, o qual deve ser instalado no Visual Studio Code
 
+## Google Charts
+
+Neste projeto, utilizamos o Google Charts para criação do gráfico de pizza referente as transações.
+Dessa forma, foi necessário incorporar a biblioteca e importar o core do Google Chart Tools.
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> <!-- Realizando a leitura da API AJAX -->
+    <script>
+        let receita = @receita.ToString().Replace(",",".");
+        let despesas = @despesas.ToString().Replace(",",".");
+        
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Tipo', 'Valor', { role: 'annotation' }],
+                ['Receitas', receita, receita.toString()],
+                ['Despesas',  despesas, despesas.toString()],
+            ]);
+            var options = { title:'Receitas vs Despesas por Período',
+                            width:300,
+                            height:300,
+                            legend: {
+                                position: 'bottom',
+                                textStyle: {
+                                    fontSize: 10, 
+                                    bold: true,
+                                },
+                            },
+                            sliceVisibilityThreshold: 0,
+                            pieSliceText: 'value',
+                            colors: ['#0052cc', 'orange']
+                          };
+            var chart = new google.visualization.PieChart(document.getElementById('grafico'));
+            chart.draw(data, options);
+        }
+    </script>  
+    <div id="grafico"></div>
 ## 🌈 Contribuidores<br>
 
 <table>
