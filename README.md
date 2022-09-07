@@ -13,7 +13,7 @@ Utilizamos o padrão de arquitetura de aplicações MVC, o qual divide a aplica�
 Neste modelo, quando um usuário realiza uma requisição através da interface gráfica (View), a camada de Controller comunica a Model, a qual irá executar a operação e retornar o resultado esperado. Em posse disso, o intermediador (Controller) repassa a informação para a View.
 Dessa forma, o MVC traz como benefício o isolamento das camadas de negócio e de interface com o usuário, o que propicia maior flexibilidade e possibilidade de reuso das classes.
 
-<img src = "docs\padrao.jpg" alt = "diagram">
+<img src = "docs\padrao.jpg" alt = "mvc">
 
 ## 💻 Pré - Requisitos
 
