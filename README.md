@@ -24,8 +24,8 @@ Dessa forma, foi necessário incorporar a biblioteca e importar o core do Google
 
 	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> //Realiza a leitura da API AJAX
         <script>
-        let receita = @receita.ToString().Replace(",","."); //Transforma o tipo da varíavel receita em String e substitui as vírgulas dos valores informados em pontos
-        let despesas = @despesas.ToString().Replace(",",".");//Transforma o tipo da varíavel despesas em String e substitui as vírgulas dos valores informados em pontos
+        let receita = @receita.ToString().Replace(",","."); //Transforma o tipo da varíavel receita de Decimal para String e substitui as vírgulas dos valores informados em pontos
+        let despesas = @despesas.ToString().Replace(",",".");//Transforma o tipo da varíavel despesas de Decimal para String e substitui as vírgulas dos valores informados em pontos
         
         google.charts.load('current', {'packages':['corechart']});//Carrega a API de visualização e o pacote corechart
         google.charts.setOnLoadCallback(drawChart);//Define uma callback para ser executada quando a API de visualização do Google for carregada.
