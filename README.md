@@ -13,4 +13,6 @@ Antes de iniciar, por favor verificar se possui/instalou os seguintes requisitos
 - Versão mais recente do Visual Studio Code
 - Extensão do C# para Visual Studio Code
 -.NET Core SDK 6.0 através do link "https://dotnet.microsoft.com/en-us/download"
-- Última versão do Git por meio do link "https://git-scm.com/downloads"
+- Última versão do Git, a qual pode ser adquirida por meio do link "https://git-scm.com/downloads"
+- Última versão do C# extensions instalada no Visual Studio Code
+
