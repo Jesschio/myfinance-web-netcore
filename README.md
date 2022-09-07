@@ -59,9 +59,8 @@ Dessa forma, foi necessário incorporar a biblioteca e importar o core do Google
             var chart = new google.visualization.PieChart(document.getElementById('grafico'));
             chart.draw(data, options);
         }
-    </script>  
-//Div que contêm o gráfico de pizza
-    <div id="grafico"></div>
+    </script>
+    <div id="grafico"></div>//Div que contêm o gráfico de pizza
 
 ## 🌈 Contribuidores<br>
 
