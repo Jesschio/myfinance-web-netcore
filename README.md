@@ -21,7 +21,7 @@ Antes de iniciar, por favor verificar se possui/instalou os seguintes requisitos
 - Realize um Fork desse repositório
 - Crie um branch através do comando: git checkout -b <branch_name>
 - Faça as mudanças que achar necessário e as confirme: git commit -m 'mensagem commit'
-- Mande para o branch original: git push origin 'nome do prjeto'/'local'
+- Mande para o branch original: git push origin 'nome do projeto'/'local'
 - Crie um pull request.
   
 
