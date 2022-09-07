@@ -22,20 +22,25 @@ Neste projeto, utilizamos o Google Charts para criação do gráfico de pizza re
 
 Dessa forma, foi necessário incorporar a biblioteca e importar o core do Google Chart Tools.
 
-
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> //Realizando a leitura da API AJAX
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> //Realiza a leitura da API AJAX
     <script>
         let receita = @receita.ToString().Replace(",",".");
         let despesas = @despesas.ToString().Replace(",",".");
         
-        google.charts.load('current', {'packages':['corechart']});
-        google.charts.setOnLoadCallback(drawChart);
+        google.charts.load('current', {'packages':['corechart']});//Carrega a API de visualização e o pacote corechart
+        google.charts.setOnLoadCallback(drawChart);//Define uma callback para ser executada quando a API de visualização do Google for carregada.
+
+	//Function drawChar: Callback que cria e preenche uma tabela de dados, instancia o gráfico de pizza, passa os dados e os desenha
         function drawChart() {
-            var data = google.visualization.arrayToDataTable([
+
+	    //Cria a tabela de dados
+            var data = google.visualization.arrayToDataTable([ 
                 ['Tipo', 'Valor', { role: 'annotation' }],
                 ['Receitas', receita, receita.toString()],
                 ['Despesas',  despesas, despesas.toString()],
             ]);
+		
+	  //Define as opções do layout do gráfico
             var options = { title:'Receitas vs Despesas por Período',
                             width:300,
                             height:300,
@@ -50,11 +55,14 @@ Dessa forma, foi necessário incorporar a biblioteca e importar o core do Google
                             pieSliceText: 'value',
                             colors: ['#0052cc', 'orange']
                           };
+	    //Instancia e desenha o gráfico, passando as opções anteriores
             var chart = new google.visualization.PieChart(document.getElementById('grafico'));
             chart.draw(data, options);
         }
     </script>  
+//Div que contêm o gráfico de pizza
     <div id="grafico"></div>
+
 ## 🌈 Contribuidores<br>
 
 <table>
