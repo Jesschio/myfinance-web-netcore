@@ -12,7 +12,17 @@ A figura abaixo representa a modelagem lógica do banco de dados da aplicação 
 Antes de iniciar, por favor verificar se possui/instalou os seguintes requisitos:
 - Versão mais recente do Visual Studio Code
 - Extensão do C# para Visual Studio Code
--.NET Core SDK 6.0 através do link "https://dotnet.microsoft.com/en-us/download"
+-.NET Core SDK 6.0, o qual pode ser obtido através do link "https://dotnet.microsoft.com/en-us/download"
 - Última versão do Git, a qual pode ser adquirida por meio do link "https://git-scm.com/downloads"
-- Última versão do C# extensions instalada no Visual Studio Code
+- Última versão do C# extensions, o qual deve ser instalado no Visual Studio Code
+
+## Contribuia
+
+- Realize um Fork desse repositório
+- Crie um branch através do comando: git checkout -b <branch_name>
+- Faça as mudanças que achar necessário e as confirme: git commit -m '<commit_message>'
+- Mande para o branch original: git push origin <project_name> / <local>
+- Crie um pull request.
+  
+
 
