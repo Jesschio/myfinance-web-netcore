@@ -1,11 +1,17 @@
 # My Finance Web
 MyFinance - Projeto do Curso de Pós-Graduação em Engenharia de Software da PUC-MG
 
-## Arquitetura
+## Modelo DER
 
 A figura abaixo representa a modelagem lógica do banco de dados da aplicação no modelo de DER - Diagrama de Entidades e Relacionamentos.
 
 <img src = "docs\DER.png" alt = "diagram">
+
+## Arquitetura
+
+Utilizamos o padrão de arquitetura de aplicações MVC, o qual divide a aplicação em três camadas (Model - View - Controller).
+Neste modelo, quando um usuário realiza uma requisição através da interface gráfica (View), a camada de Controller comunica a Model, a qual irá executar a operação e retornar o resultado esperado. Em posse disso, o intermediador (Controller) repassa a informação para a View.
+Dessa forma, o MVC traz como benefício o isolamento das camadas de negócio e de interface com o usuário, o que propicia maior flexibilidade e possibilidade de reuso das classes.
 
 ## 💻 Pré - Requisitos
 
@@ -62,7 +68,7 @@ Dessa forma, foi necessário incorporar a biblioteca e importar o core do Google
     </script>
     <div id="grafico"></div>//Div que contêm o gráfico de pizza
 
-## 🌈 Contribuidores<br>
+## ☕ Contribuidores<br>
 
 <table>
   <tr>
