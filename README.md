@@ -68,7 +68,7 @@ Dessa forma, foi necessário incorporar a biblioteca e importar o core do Google
     </script>
     <div id="grafico"></div>//Div que contêm o gráfico de pizza
 
-## ☕ Contribuidores<br>
+## ☕ Seja um dos Contribuidores<br>
 
 <table>
   <tr>
