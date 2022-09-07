@@ -22,8 +22,8 @@ Neste projeto, utilizamos o Google Charts para criação do gráfico de pizza re
 
 Dessa forma, foi necessário incorporar a biblioteca e importar o core do Google Chart Tools.
 
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> //Realiza a leitura da API AJAX
-    <script>
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> //Realiza a leitura da API AJAX
+        <script>
         let receita = @receita.ToString().Replace(",",".");
         let despesas = @despesas.ToString().Replace(",",".");
         
