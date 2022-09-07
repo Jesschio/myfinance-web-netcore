@@ -7,7 +7,7 @@ A figura abaixo representa a modelagem lógica do banco de dados da aplicação 
 
 <img src = "docs\DER.png" alt = "diagram">
 
-## Requisitos
+## 💻 Pré - Requisitos
 
 Antes de iniciar, por favor verificar se possui/instalou os seguintes requisitos:
 - Versão mais recente do Visual Studio Code
@@ -16,7 +16,7 @@ Antes de iniciar, por favor verificar se possui/instalou os seguintes requisitos
 - Última versão do Git, a qual pode ser adquirida por meio do link "https://git-scm.com/downloads"
 - Última versão do C# extensions, o qual deve ser instalado no Visual Studio Code
 
-## Contribuia
+## 📫 Contribuia
 
 - Realize um Fork desse repositório
 - Crie um branch através do comando: git checkout -b <branch_name>
