@@ -42,6 +42,7 @@ Antes de iniciar, por favor verificar se possui/instalou os seguintes requisitos
 - Execute o comando "dotnet build" para compilar
 	<img src = "docs\compilacao.png" alt = "compilar">
 - Execute o comando "dotnet run" para executar a aplicação. Dessa forma, o console do terminal irá informar o endereço onde a aplicação está sendo executada.
+	
 	<img src = "docs\dotnetrun.png" alt = "executar">
 - Copie e cole em seu navegador para acessar
 	<img src = "docs\navegador.png" alt = "navegador">
