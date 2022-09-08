@@ -26,16 +26,25 @@ Antes de iniciar, por favor verificar se possui/instalou os seguintes requisitos
 
 ## Get Start
 
-- Crie uma pasta para armazenar seus repositórios. Por exemplo: “C:\Desenvolvimento\PUC”.
-- Acesse o link "https://github.com/Jesschio/myfinance-web-netcore" e copie o link do repositório.
-- Clique com o botão direito dentro da pasta onde ficará armazenado seu projeto e clone o repositório.
-- Abra o repositório "myfinance-web-netcore" no VSCode
-- Restaure a extensão C#
+- Crie uma pasta para armazenar seus repositórios. Por exemplo: “C:\Desenvolvimento\PUC”:
+- Acesse o link "https://github.com/Jesschio/myfinance-web-netcore" e copie o link do repositório:
+	<img src = "docs\CopiarLinkGit.png" alt = "linkgit">
+- Clique com o botão direito dentro da pasta onde ficará armazenado seu projeto e clone o repositório:
+	<img src = "docs\ArmazenamentoProjeto.png" alt = "armazenamento">
+	<img src = "docs\GitClone.png" alt = "clonar">
+- Abra o repositório "myfinance-web-netcore" no VSCode:
+        <img src = "docs\AbrirPasta.png" alt = "abrir">
+- Restaure a extensão C#:
+        <img src = "docs\Restaurarextensao.png" alt = "restaurar">
 - Realize o link entre o projeto e o banco de dados
 - Abra um novo terminal e execute o comando "cd .\myfinance-web-netcore\"
+	<img src = "docs\Novoterminal.png" alt = "terminal">
 - Execute o comando "dotnet build" para compilar
+	<img src = "docs\compilacao.png" alt = "compilar">
 - Execute o comando "dotnet run" para executar a aplicação. Dessa forma, o console do terminal irá informar o endereço onde a aplicação está sendo executada.
+	<img src = "docs\dotnetrun.png" alt = "executar">
 - Copie e cole em seu navegador para acessar
+	<img src = "docs\navegador.png" alt = "navegador">
 
 ## Google Charts
 
