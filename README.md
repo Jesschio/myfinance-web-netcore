@@ -26,7 +26,7 @@ Antes de iniciar, por favor verificar se possui/instalou os seguintes requisitos
 
 ## Get Start
 
-- Crie uma pasta para armazenar seus repositórios. Por exemplo: “C:\Desenvolvimento\PUC”:
+- Crie uma pasta para armazenar seus repositórios. Por exemplo: “C:\Desenvolvimento\PUC”
 - Acesse o link "https://github.com/Jesschio/myfinance-web-netcore" e copie o link do repositório:
 	<img src = "docs\CopiarLinkGit.png" alt = "linkgit">
 - Clique com o botão direito dentro da pasta onde ficará armazenado seu projeto e clone o repositório:
