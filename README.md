@@ -24,6 +24,19 @@ Antes de iniciar, por favor verificar se possui/instalou os seguintes requisitos
 - Última versão do Git, a qual pode ser adquirida por meio do link "https://git-scm.com/downloads"
 - Última versão do C# extensions, o qual deve ser instalado no Visual Studio Code
 
+## Get Start
+
+- Crie uma pasta para armazenar seus repositórios. Por exemplo: “C:\Desenvolvimento\PUC”.
+- Acesse o link "https://github.com/Jesschio/myfinance-web-netcore" e copie o link do repositório.
+- Clique com o botão direito dentro da pasta onde ficará armazenado seu projeto e clone o repositório.
+- Abra o repositório "myfinance-web-netcore" no VSCode
+- Restaure a extensão C#
+- Realize o link entre o projeto e o banco de dados
+- Abra um novo terminal e execute o comando "cd .\myfinance-web-netcore\"
+- Execute o comando "dotnet build" para compilar
+- Execute o comando "dotnet run" para executar a aplicação. Dessa forma, o console do terminal irá informar o endereço onde a aplicação está sendo executada.
+- Copie e cole em seu navegador para acessar
+
 ## Google Charts
 
 Neste projeto, utilizamos o Google Charts para criação do gráfico de pizza referente as transações.
